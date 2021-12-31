@@ -1,0 +1,95 @@
+_schema-version: "3.2"
+ID: demo_mta_fiori_standalone
+version: 0.0.1
+modules:
+- name: demo-mta-fiori-standalone-approuter
+  type: approuter.nodejs
+  path: demo-mta-fiori-standalone-approuter
+  requires:
+  - name: demo_mta_fiori_standalone_html_repo_runtime
+  - name: uaa_demo_mta_fiori_standalone
+  - name: demo_mta_fiori_standalone-dest-srv
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: demo_mta_fiori_standalone_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: demo_mta_fiori_standalone_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - demoemployeefiorialone.zip
+      name: demoemployeefiorialone
+      target-path: resources/
+    - artifacts:
+      - demoflightcomdemofelist.zip
+      name: demoflightcomdemofelist
+      target-path: resources/
+- name: demoemployeefiorialone
+  type: html5
+  path: demo_employee_fiori_alone
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: demoflightcomdemofelist
+  type: html5
+  path: demo_fe_list
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: demo_mta_fiori_standalone_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: uaa_demo_mta_fiori_standalone
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: demo_mta_fiori_standalone-xsuaa-service
+    service-plan: application
+- name: demo_mta_fiori_standalone_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: demo_mta_fiori_standalone-dest-srv
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: demo_mta_fiori_standalone-dest-srv
+    service-plan: lite
+parameters:
+  deploy_mode: html5-repo

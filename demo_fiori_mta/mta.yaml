@@ -1,0 +1,134 @@
+_schema-version: "3.2"
+ID: demo_fiori_mta
+version: 0.0.1
+modules:
+- name: demo_fiori_mta-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: demo_fiori_mta-destination-service
+    parameters:
+      content-target: true
+  - name: demo_fiori_mta_html_repo_host
+    parameters:
+      service-key:
+        name: demo_fiori_mta_html_repo_host-key
+  - name: uaa_demo_fiori_mta
+    parameters:
+      service-key:
+        name: uaa_demo_fiori_mta-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: demo_fiori_mta_demo_fiori_mta_html_repo_host
+          ServiceInstanceName: demo_fiori_mta-html5-app-host-service
+          ServiceKeyName: demo_fiori_mta_html_repo_host-key
+          sap.cloud.service: demo_fiori_mta
+        - Authentication: OAuth2UserTokenExchange
+          Name: demo_fiori_mta_uaa_demo_fiori_mta
+          ServiceInstanceName: demo_fiori_mta-xsuaa-service
+          ServiceKeyName: uaa_demo_fiori_mta-key
+          sap.cloud.service: demo_fiori_mta
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: demo_fiori_mta-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: demo_fiori_mta_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - supplierdemocomdemouisuppliermanaged.zip
+      name: supplierdemocomdemouisuppliermanaged
+      target-path: resources/
+    - artifacts:
+      - demouisecond.zip
+      name: demouisecond
+      target-path: resources/
+    - artifacts:
+      - Productdemodemouiproduct.zip
+      name: Productdemodemouiproduct
+      target-path: resources/
+    - artifacts:
+      - uxtestcomuxtest.zip
+      name: uxtestcomuxtest
+      target-path: resources/
+- name: supplierdemocomdemouisuppliermanaged
+  type: html5
+  path: demo_ui_supplier_managed
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: demouisecond
+  type: html5
+  path: demo_ui_second
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: Productdemodemouiproduct
+  type: html5
+  path: demo_ui_product
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: uxtestcomuxtest
+  type: html5
+  path: uxtest
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: demo_fiori_mta-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: demo_fiori_mta-destination-service
+    service-plan: lite
+- name: demo_fiori_mta_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: demo_fiori_mta-html5-app-host-service
+    service-plan: app-host
+- name: uaa_demo_fiori_mta
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: demo_fiori_mta-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo

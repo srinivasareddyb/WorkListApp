@@ -1,0 +1,238 @@
+{
+  "configurations": [
+    {
+      "name": "Start demo_ui_supplier_managed",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/demo_ui_supplier_managed",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "'test/flpSandbox.html#supplierdemocomdemouisuppliermanaged-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_supplier_managed\"}"
+      }
+    },
+    {
+      "name": "Start demo_ui_supplier_managed Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/demo_ui_supplier_managed",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "'test/flpSandboxMockServer.html#supplierdemocomdemouisuppliermanaged-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_supplier_managed\"}"
+      }
+    },
+    {
+      "name": "Start demo_ui_supplier_managed Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/demo_ui_supplier_managed",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "'test/flpSandbox.html#supplierdemocomdemouisuppliermanaged-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_supplier_managed\"}"
+      }
+    },
+    {
+      "name": "Start demo_ui_product",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/demo_ui_product",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "'test/flpSandbox.html#Productdemodemouiproduct-tile'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_product\"}"
+      }
+    },
+    {
+      "name": "Start demo_ui_product Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/demo_ui_product",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "'test/flpSandboxMockServer.html#Productdemodemouiproduct-tile'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_product\"}"
+      }
+    },
+    {
+      "name": "Start demo_ui_product Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/demo_ui_product",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "'test/flpSandboxMockServer.html#Productdemodemouiproduct-tile'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_product\"}"
+      }
+    },
+    {
+      "name": "Start uxtest",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/uxtest",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "'test/flpSandbox.html?sap-client=002#uxtestcomuxtest-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/uxtest\"}"
+      }
+    },
+    {
+      "name": "Start uxtest Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/uxtest",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "'test/flpSandboxMockServer.html?sap-client=002#uxtestcomuxtest-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/uxtest\"}"
+      }
+    },
+    {
+      "name": "Start uxtest Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/uxtest",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "'test/flpSandbox.html?sap-client=002#uxtestcomuxtest-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/uxtest\"}"
+      }
+    }
+  ],
+  "compounds": [],
+  "version": "0.2.0",
+  "inputs": [
+    {
+      "id": "UI5Version",
+      "type": "command",
+      "command": "sap.ux.appGenerator.ui5Version"
+    }
+  ]
+}

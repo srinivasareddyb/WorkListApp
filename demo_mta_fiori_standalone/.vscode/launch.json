@@ -1,11 +1,11 @@
 {
   "configurations": [
     {
-      "name": "Start product",
+      "name": "Start demo_employee_fiori_alone",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
-      "cwd": "${workspaceFolder}/product",
+      "cwd": "${workspaceFolder}/demo_employee_fiori_alone",
       "windows": {
         "runtimeExecutable": "npx.cmd"
       },
@@ -15,21 +15,21 @@
       ],
       "args": [
         "--open",
-        "'test/flpSandbox.html#product-display'"
+        "'test/flpSandbox.html#demoemployeefiorialone-display'"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "port": 9229,
       "env": {
         "DEBUG": "--inspect",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/product\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_mta_fiori_standalone/demo_employee_fiori_alone\"}"
       }
     },
     {
-      "name": "Start product Mock",
+      "name": "Start demo_employee_fiori_alone Mock",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}/product",
+      "cwd": "${workspaceFolder}/demo_employee_fiori_alone",
       "runtimeExecutable": "npx",
       "windows": {
         "runtimeExecutable": "npx.cmd"
@@ -40,20 +40,20 @@
       ],
       "args": [
         "--open",
-        "'test/flpSandboxMockServer.html#product-display'"
+        "'test/flpSandboxMockServer.html#demoemployeefiorialone-display'"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "port": 9229,
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/product\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_mta_fiori_standalone/demo_employee_fiori_alone\"}"
       }
     },
     {
-      "name": "Start product Local",
+      "name": "Start demo_employee_fiori_alone Local",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}/product",
+      "cwd": "${workspaceFolder}/demo_employee_fiori_alone",
       "runtimeExecutable": "npx",
       "windows": {
         "runtimeExecutable": "npx.cmd"
@@ -66,21 +66,21 @@
         "--config",
         "./ui5-local.yaml",
         "--open",
-        "'test/flpSandbox.html#product-display'"
+        "'test/flpSandbox.html#demoemployeefiorialone-display'"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "port": 9229,
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/product\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_mta_fiori_standalone/demo_employee_fiori_alone\"}"
       }
     },
     {
-      "name": "Start demo_ui_second",
+      "name": "Start demo_fe_list",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
-      "cwd": "${workspaceFolder}/demo_ui_second",
+      "cwd": "${workspaceFolder}/demo_fe_list",
       "windows": {
         "runtimeExecutable": "npx.cmd"
       },
@@ -90,21 +90,21 @@
       ],
       "args": [
         "--open",
-        "'test/flpSandbox.html#demouisecond-display'"
+        "'test/flpSandbox.html?sap-client=002#demoflightcomdemofelist-tile'"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "port": 9229,
       "env": {
         "DEBUG": "--inspect",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_second\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_mta_fiori_standalone/demo_fe_list\"}"
       }
     },
     {
-      "name": "Start demo_ui_second Mock",
+      "name": "Start demo_fe_list Mock",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}/demo_ui_second",
+      "cwd": "${workspaceFolder}/demo_fe_list",
       "runtimeExecutable": "npx",
       "windows": {
         "runtimeExecutable": "npx.cmd"
@@ -115,20 +115,20 @@
       ],
       "args": [
         "--open",
-        "'test/flpSandboxMockServer.html#demouisecond-display'"
+        "'test/flpSandboxMockServer.html?sap-client=002#demoflightcomdemofelist-tile'"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "port": 9229,
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_second\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_mta_fiori_standalone/demo_fe_list\"}"
       }
     },
     {
-      "name": "Start demo_ui_second Local",
+      "name": "Start demo_fe_list Local",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}/demo_ui_second",
+      "cwd": "${workspaceFolder}/demo_fe_list",
       "runtimeExecutable": "npx",
       "windows": {
         "runtimeExecutable": "npx.cmd"
@@ -141,23 +141,23 @@
         "--config",
         "./ui5-local.yaml",
         "--open",
-        "'test/flpSandbox.html#demouisecond-display'"
+        "'test/flpSandboxMockServer.html?sap-client=002#demoflightcomdemofelist-tile'"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "port": 9229,
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_fiori_mta/demo_ui_second\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/demo_mta_fiori_standalone/demo_fe_list\"}"
       }
     }
   ],
   "compounds": [],
+  "version": "0.2.0",
   "inputs": [
     {
       "id": "UI5Version",
       "type": "command",
       "command": "sap.ux.appGenerator.ui5Version"
     }
-  ],
-  "version": "0.2.0"
+  ]
 }
